@@ -1,0 +1,42 @@
+package entidades;
+
+import java.util.ArrayList;
+
+public class MainInterfaces {
+
+	public static void main(String[] args) {
+		
+		//Movible movible = new Persona();	// Se puede referencias a traves de la interfaz
+		//movible.moverseRapido();
+		
+		Persona p1 = new Persona();
+		p1.setNombre("Silvestre");
+		p1.setEdad(34);
+		
+		Coche p2 = new Coche();
+		p2.setMatricula("1234 ABC");
+		p2.setMarca("Renault");
+		
+		Persona p3 = new Persona();
+		p3.setNombre("Piolin");
+		p3.setEdad(12);
+		
+		Coche p4 = new Coche();
+		p4.setMatricula("4321 XYZ");
+		p4.setMarca("Peugeot");
+		
+		ArrayList<Movible> carrera = new ArrayList<>();
+		
+		carrera.add(p1);
+		carrera.add(p2);
+		carrera.add(p3);
+		carrera.add(p4);
+		
+		for (Movible participante : carrera) {
+			participante.moverseRapido();
+			//System.out.println();
+			
+		}
+	}
+	
+}

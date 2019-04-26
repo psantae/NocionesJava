@@ -1,0 +1,45 @@
+package controladores;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import modelo.entidades.Usuario;
+
+/*Para la creacion de servlets se usa un concepto que se llama
+ * inversion de control. este concepto nos dice que nosotros no vamos a gestionar
+ * directamente el ciclo de vida de este objeto servlet
+ * sino que va a ser Tomcat el que lo gestiona
+ */
+
+/*
+ * La anotacion webserver le dice a TomCat que tiene que gestionar el ciclo de vida de 
+ * este objeto (IoC) inversion de control
+ */
+
+
+@WebServlet("/ControladorUsuario")
+public class ControladorUsuario extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+      
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nombre = request.getParameter("nombreUsuario");
+		String password = request.getParameter("passwordUsuario");
+		
+		Usuario usuario = new Usuario();
+		usuario.setNombre(nombre);
+		usuario.setPassword(password);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

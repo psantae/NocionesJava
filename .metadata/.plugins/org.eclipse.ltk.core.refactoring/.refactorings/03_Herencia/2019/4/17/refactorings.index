@@ -1,0 +1,4 @@
+1556015640973	Rename type 'Trabajador'
+1556015890680	Rename field 'nomina'
+1556015931943	Rename field 'sueldoBase'
+1556016311317	Encapsulate field 'listaEmpleados'

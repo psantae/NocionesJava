@@ -1,0 +1,20 @@
+
+public class MainSentenciasControl {
+	public static void main(String[] args) {
+		//condicionales
+		int numero = 10;
+		if(numero > 10) {
+			System.out.println("el numero es mayor que 10");
+		}else if(numero < 10){
+			System.out.println("el numero es menor que 10");
+		}else {
+			System.out.println("el numero es 10");
+		}
+		
+		//inicializacion de la variable, condicion de bucle, incremento de bucle
+		for (int i=0;i<=10;i++) {
+			System.out.println(i);
+		}
+		
+	}
+}

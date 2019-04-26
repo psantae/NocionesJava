@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  el scope en principio es singleton si no le decimos nada -->
+	<!--  singleton es un patron que dice que ese objeto va a ser unico en la aplicacion-->
+    <bean id="lisa" class="ejemplo1.Persona" scope="singleton"> 
+    	<property name="nombre" value="Lisa Simpson"></property> 
+   	    <property name="edad" value="8"></property> 
+    	<property name="peso" value="40.5"></property> 
+    	
+   </bean> 
+   
+   <!-- prototype, cada vez que pedimos una persona generica el objeto es diferente, es una plantilla -->   
+   <bean id="personaGenerica" class="ejemplo1.Persona" scope="prototype">
+   	    <property name="edad" value="18"></property> 
+   </bean>
+   
+   <bean id="arrayPersonas" class="java.util.ArrayList" scope="singleton"></bean>
+
+</beans>

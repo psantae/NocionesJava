@@ -1,0 +1,8 @@
+
+public class MainCast {
+	public static void main(String[] args) {
+		double real = 5;
+		int entero = (int)real; //casting
+		System.out.println(entero);
+	}
+}

@@ -1,0 +1,78 @@
+package main;
+
+//siempre que usemos una clase que no este en nuestro paquete
+//tenemos que importarla
+import entidades.Persona;
+import entidades.Direccion;
+
+public class MainPOO {
+	 public static void main(String[] args) {
+		Persona p = new Persona();
+		p.nombre = "Pablo";
+		p.edad = 36;
+		p.peso = 79.4;
+		
+		Persona p2 = new Persona();
+		p2.nombre = "Ainhara";
+		p2.edad= 36;
+		p2.peso = 50;
+		
+		p2.andar(10);
+		//p.metros = 45;
+		
+		Persona p3 = p2; //con esto estamos apuntando al mismo objeto que apunta p2
+		System.out.println(p3.getMetros());
+		
+		Persona p4 = p;
+		p4.edad = 7;//se la estoy cambiando tambien a p
+		System.out.println(p.edad);
+		
+		cambiarEdad(p4);
+		
+		System.out.println(p4.edad);
+		
+		int numero = 5;
+		cambiarNumero(numero);
+		System.out.println(numero);//esto imprime 5, es la diferencia entre referencias y primitivos
+		
+		//invocamos el metodo crearPersona
+		Persona p5 = crearPersona();
+		System.out.println(p5.edad);
+		
+		Persona p6 = new Persona("Ramon",54,80,0);
+		
+		System.out.println(p5.nombre);
+		System.out.println(p5.peso);
+		
+		System.out.println(p6.nombre);
+		
+		Persona p7 = null;
+		//lo siguiente daria null pointer exception
+		//System.out.println(p7.edad);
+		
+		p7 = new Persona ("Ana",37,60,0);
+		
+		p7.direccion = new Direccion();
+		p7.direccion.tipoVia = "Calle";
+		
+		//int codigopostal = 03730 //ojo, los numeros que empiezan por 0 son base octal
+		//System.out.println(codigopostal); //imprime un numero raro
+		//moraleja: los codigos postales, string
+		
+	}
+	 
+	public static void cambiarEdad(Persona p) {
+		p.edad = 66;
+	}
+	
+	public static void cambiarNumero(int numero) {
+		numero = 10;
+	}
+	
+	public static Persona crearPersona() {
+		Persona p = new Persona();
+		p.edad = 51;
+		//trabajamos con la persona...
+		return p;
+	}
+}
